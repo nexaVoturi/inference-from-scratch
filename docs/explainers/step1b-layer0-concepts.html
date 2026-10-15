@@ -14,7 +14,6 @@
 <div class="eyebrow">Inference engineering · a visual learning note</div>
 <h1>Inside a transformer layer</h1>
 <p class="lead">From token vectors to residual updates, RMSNorm, query projections, and attention heads.</p>
-<dl><dt>Date</dt><dd>13 October 2026</dd><dt>Input shape</dt><dd>concept</dd><dt>Subject</dt><dd><code>engine/step1b_layer0.py</code> — the concepts discussed so far</dd></dl>
 <p>This lesson addresses common questions about layer 0 of Qwen3-0.6B. The code uses a 20-token prompt for the diagrams; the script itself reads the actual prompt length. Diagrams of later layers show how the same structure extends beyond this one-layer script.</p>
 <nav aria-label="Lesson contents"><a href="#hidden">01 · Token vectors</a><a href="#residual">02 · Direct path</a><a href="#later">03 · Later layers</a><a href="#norm">04 · RMSNorm</a><a href="#qkv">05 · Q, K, V</a><a href="#training">06 · Learning the roles</a><a href="#expansion">07 · Why 2,048?</a><a href="#transpose">08 · What Wq.T means</a><a href="#heads">09 · Splitting into heads</a><a href="#qknorm">10 · Q/K norm</a><a href="#rope">11 · RoPE</a><a href="#gqa">12 · GQA</a><a href="#causal">13 · Causal attention</a><a href="#mlp">14 · Gated MLP</a><a href="#check">Check yourself</a></nav>
 </header>
