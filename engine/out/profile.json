@@ -1,0 +1,54 @@
+{
+  "device": "cpu",
+  "prompt_tokens": 20,
+  "new_tokens": 32,
+  "repeats": 3,
+  "warmup": 1,
+  "tile_size": 128,
+  "results": {
+    "full": {
+      "prefill_ms": 114.75154101208318,
+      "decode_ms": 722.3627079947619,
+      "decode_ms_per_token": 22.57383462483631,
+      "total_ms": 842.7194579853676,
+      "token_match": "32/32",
+      "exact": true,
+      "samples": [
+        {
+          "prefill_ms": 114.75154101208318,
+          "decode_ms": 714.5057500019902
+        },
+        {
+          "prefill_ms": 109.35524999513291,
+          "decode_ms": 740.2629169955617
+        },
+        {
+          "prefill_ms": 120.35674999060575,
+          "decode_ms": 722.3627079947619
+        }
+      ]
+    },
+    "tiled": {
+      "prefill_ms": 118.77033399650827,
+      "decode_ms": 791.1278749961639,
+      "decode_ms_per_token": 24.72274609363012,
+      "total_ms": 903.0572079936974,
+      "token_match": "32/32",
+      "exact": true,
+      "samples": [
+        {
+          "prefill_ms": 120.76825000985991,
+          "decode_ms": 740.3273340023588
+        },
+        {
+          "prefill_ms": 118.77033399650827,
+          "decode_ms": 801.9859160121996
+        },
+        {
+          "prefill_ms": 111.92933299753349,
+          "decode_ms": 791.1278749961639
+        }
+      ]
+    }
+  }
+}

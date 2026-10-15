@@ -1,0 +1,8 @@
+# Pinned to the versions the engine scripts were verified against (Python 3.11.8, macOS/MPS).
+# Install into a venv from the repo root:
+#   python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+torch==2.7.1
+transformers==5.17.0
+safetensors==0.8.0
+huggingface_hub==1.32.0
+numpy==1.26.4
