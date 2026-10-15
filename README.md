@@ -10,8 +10,8 @@ attention paths.
 
 ## Start here
 
-- [Compendium: Build Your Own Qwen3 Inference Loop](docs/explainers/step1c-inference-loop-compendium.html)
-- [Inside a transformer layer](docs/explainers/step1b-layer0-concepts.html)
+- [Compendium: Build Your Own Qwen3 Inference Loop](https://nexavoturi.github.io/inference-from-scratch/docs/explainers/step1c-inference-loop-compendium.html)
+- [Inside a transformer layer](https://nexavoturi.github.io/inference-from-scratch/docs/explainers/step1b-layer0-concepts.html)
 - [Engine reproduction notes](engine/README.md)
 - [Methodology and claim boundaries](METHODOLOGY.md)
 
