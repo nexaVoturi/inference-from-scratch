@@ -111,14 +111,7 @@ new_cache = (k, v)</pre>
 <p class="source">Source: <a href="../../engine/out/profile.json">profile.json</a>; explanatory implementation notes: <a href="../../engine/README.md">engine/README.md</a>.</p>
 </section>
 
-<section id="meaning"><div class="chapter">08 / What this work means</div><h2>What I can claim from this work</h2>
-<p>This work shows that I can inspect the model configuration, load its weights, reproduce the transformer math, build an autoregressive loop with a KV cache, and verify the result against a trusted implementation.</p>
-<p>I also have a repeatable workflow for each inference change:</p>
-<ol><li>What part of the computation changed?</li><li>What memory or time cost was it meant to change?</li><li>Did it preserve the output?</li><li>Did it improve the workload and hardware I actually measured?</li></ol>
-<div class="cards"><div class="card"><h3>Proved</h3><p>The full loop and tiled loop reproduce the 32-token reference sequence for this prompt and model snapshot.</p></div><div class="card"><h3>Measured</h3><p>I measured KV-cache growth, prompt prefill time, one-token decode time, and the difference between full and tiled attention on my CPU.</p></div><div class="card"><h3>Not proved</h3><p>This work does not prove production throughput, CUDA performance, batching behavior, paged-cache behavior, or a universal speedup from tiling.</p></div></div>
-<div class="note"><p><strong>Why I can publish this:</strong> I can show the mechanism, the correctness gate, the baseline, and why my first optimization did not help on my CPU.</p></div>
-<p>My next serious measurement is an operator-level profile on CUDA hardware. That profile can show whether the main cost is weight movement, matrix multiplication, attention, normalization, Python overhead, or another operation. I will make hardware-specific performance claims only after that measurement.</p>
-</section>
+
 
 <section id="check"><div class="chapter">Practice / Apply the mechanism</div><h2>Check yourself</h2>
 <ol><li>Why do I save the Hugging Face output before I write the manual loop?</li><li>What is the difference between prefill and decode?</li><li>Why does the KV cache grow during generation?</li><li>Which part of the transformer block mixes token positions? Which part works independently per position?</li><li>Why can tiled attention be correct but slower?</li><li>What does a 32/32 token match prove? What does it not prove?</li></ol>
