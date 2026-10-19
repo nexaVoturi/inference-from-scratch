@@ -103,6 +103,7 @@ new_cache = (k, v)</pre>
 <p class="source">Source: <a href="../../engine/step1c_autoregressive.py">step1c_autoregressive.py</a>, lines 47–89 and 141–163; timing harness: <a href="../../engine/step1e_profile.py">step1e_profile.py</a>.</p>
 </section>
 
+    
 <section id="validation"><div class="chapter">07 / The proof checkpoint</div><h2>Block 7: Compare behavior before speed</h2>
 <div class="why"><small>Why I need this block</small>Performance numbers do not help if a candidate computes a different function. My manual paths must first generate the same token IDs as the reference.</div>
 <div class="table-wrap"><table><thead><tr><th>Checkpoint</th><th>Observed result</th><th>What I learned</th></tr></thead><tbody><tr><td>Layer 0 hidden state</td><td>Max absolute difference 0.031250; mean absolute difference 0.000768.</td><td>My explicit first-layer math is numerically aligned with Transformers for the saved prompt.</td></tr><tr><td>Manual full loop</td><td>32/32 generated token IDs match.</td><td>My 28-layer loop, cache, logits, and greedy choice agree with the reference.</td></tr><tr><td>Manual tiled loop</td><td>32/32 generated token IDs match.</td><td>My tiled path preserves the observed generation sequence. Floating-point accumulation differs slightly.</td></tr><tr><td>Timing</td><td>Full 22.6 ms/token; tiled 24.7 ms/token on my CPU.</td><td>My current tiled implementation is not a speed win in this environment.</td></tr></tbody></table></div>
